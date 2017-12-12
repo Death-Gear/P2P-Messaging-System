@@ -7,6 +7,8 @@ package chat_messenger;
 
 import static chat_messenger.chat_fr.text_area;
 import static chat_messenger.chat_fr.attachFile;
+import static chat_messenger.chat_fr.btn_receive_file;
+import static chat_messenger.chat_fr.btn_send_file;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -30,7 +32,8 @@ public class Chat_Messenger {
         
         text_area.setEditable(false);
         
-        
+        btn_receive_file.setEnabled(false);
+        btn_send_file.setEnabled(false);
         JMenuBar mb = new JMenuBar();
         JMenu file = new JMenu("File");
         mb.add(file);
@@ -59,6 +62,7 @@ public class Chat_Messenger {
                     File file = fc.getSelectedFile();
                     System.out.println("Selected file: " + file.getAbsolutePath());
                     attachFile(file);
+                    btn_send_file.setEnabled(true);
                 }
                 
             }

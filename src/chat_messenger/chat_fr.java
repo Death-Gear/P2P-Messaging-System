@@ -53,6 +53,7 @@ public class chat_fr extends javax.swing.JFrame {
         btn_connect = new javax.swing.JButton();
         text_filePath = new javax.swing.JTextField();
         btn_send_file = new javax.swing.JButton();
+        btn_receive_file = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,9 +71,14 @@ public class chat_fr extends javax.swing.JFrame {
 
         my_port.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         my_port.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        my_port.setText("8877");
 
         dst_port.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dst_port.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dst_port.setText("8878");
+
+        ip.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        ip.setText("127.0.0.1");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -82,7 +88,7 @@ public class chat_fr extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Dst. Port");
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("IP Address");
 
@@ -98,6 +104,19 @@ public class chat_fr extends javax.swing.JFrame {
 
         btn_send_file.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_send_file.setText("Send File");
+        btn_send_file.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_send_fileActionPerformed(evt);
+            }
+        });
+
+        btn_receive_file.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btn_receive_file.setText("Receive File");
+        btn_receive_file.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_receive_fileActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,30 +126,30 @@ public class chat_fr extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(text_filePath, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_send_file, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9))
+                                .addGap(13, 13, 13)
+                                .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(text_msg, javax.swing.GroupLayout.Alignment.LEADING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_send, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(btn_connect, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(my_port, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(dst_port, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btn_send, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(btn_connect, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(text_filePath, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_send_file, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_receive_file)
+                        .addGap(0, 22, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -138,9 +157,9 @@ public class chat_fr extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(btn_connect))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_connect, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -158,9 +177,10 @@ public class chat_fr extends javax.swing.JFrame {
                     .addComponent(text_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(text_filePath)
-                    .addComponent(btn_send_file, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
-                .addContainerGap(67, Short.MAX_VALUE))
+                    .addComponent(btn_receive_file, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_send_file, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(text_filePath, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         pack();
@@ -176,6 +196,24 @@ public class chat_fr extends javax.swing.JFrame {
         client.start();
         text_area.append("Me: "+text_msg.getText()+ "\n");
     }//GEN-LAST:event_btn_sendActionPerformed
+
+    private void btn_send_fileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_send_fileActionPerformed
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), true);
+        client.file_msg();
+        File_Sender fs = new File_Sender(file);
+        fs.start();
+        //System.out.println("file sent");
+        //Client cl = new Client(ip.getText(), Integer.parseInt(dst_port.getText())+5);
+    }//GEN-LAST:event_btn_send_fileActionPerformed
+
+    private void btn_receive_fileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_receive_fileActionPerformed
+        if(file_transfer){
+            //System.out.println("Receiving file");
+            File_Receiver fr = new File_Receiver();
+            fr.start();
+            System.out.println("Received file");
+        }
+    }//GEN-LAST:event_btn_receive_fileActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,8 +261,9 @@ public class chat_fr extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_connect;
+    public static javax.swing.JButton btn_receive_file;
     private javax.swing.JButton btn_send;
-    private javax.swing.JButton btn_send_file;
+    public static javax.swing.JButton btn_send_file;
     private javax.swing.JTextField dst_port;
     private javax.swing.JTextField ip;
     private javax.swing.JLabel jLabel1;
