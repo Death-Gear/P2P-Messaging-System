@@ -62,8 +62,11 @@ public class chat_fr extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         text_area.setColumns(20);
+        text_area.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         text_area.setRows(5);
         jScrollPane1.setViewportView(text_area);
+
+        text_msg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
 
         btn_send.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_send.setText("Send");
@@ -104,6 +107,7 @@ public class chat_fr extends javax.swing.JFrame {
             }
         });
 
+        text_filePath.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         text_filePath.setText("File Path");
 
         btn_send_file.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
