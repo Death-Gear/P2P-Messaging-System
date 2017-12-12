@@ -60,6 +60,7 @@ public class chat_fr extends javax.swing.JFrame {
         btn_receive_file = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         text_area.setColumns(20);
         text_area.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
@@ -189,6 +190,7 @@ public class chat_fr extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_connectActionPerformed
