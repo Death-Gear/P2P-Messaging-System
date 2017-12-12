@@ -18,21 +18,26 @@ import java.util.logging.Logger;
 public class Client extends Thread{
     String ip, message;
     int port;
+    Socket s;
     
     Client(String ip, int port, String message){
         this.ip = ip;
         this.port = port;
         this.message = message;
+        try {
+            s = new Socket(ip,port);
+        } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     @Override
     public void run() {
-        try {
-            Socket s = new Socket(ip,port);
+        try {       
             PrintStream p = new PrintStream(s.getOutputStream());
             p.println(message);
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } 
     }
     
 }

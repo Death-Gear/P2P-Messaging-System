@@ -24,6 +24,8 @@ public class Server extends Thread{
     int port;
     chat_fr frame;
     private static String msg;
+    ServerSocket s1;
+    Socket ss;
     Server(int port, chat_fr frame){
         this.port = port;
         this.frame = frame;
@@ -32,8 +34,7 @@ public class Server extends Thread{
     @Override
     public void run() {
         try {
-            ServerSocket s1 = new ServerSocket(port);
-            Socket ss;
+            s1 = new ServerSocket(port);
             while((ss=s1.accept())!=null){
                 Scanner sc = new Scanner(ss.getInputStream());
                 msg = sc.nextLine();

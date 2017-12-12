@@ -6,6 +6,7 @@
 package chat_messenger;
 
 import static chat_messenger.chat_fr.text_area;
+import static chat_messenger.chat_fr.attachFile;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -35,8 +36,8 @@ public class Chat_Messenger {
         mb.add(file);
         JMenu edit = new JMenu("Edit");
         mb.add(edit);
-        JMenuItem send_file = new JMenuItem("Send File");
-        file.add(send_file);
+        JMenuItem attach_file = new JMenuItem("Attach File");
+        file.add(attach_file);
         JMenuItem exit = new JMenuItem("Exit");
         file.add(exit);
         
@@ -47,7 +48,7 @@ public class Chat_Messenger {
             }
             
         });
-        send_file.addActionListener(new ActionListener(){
+        attach_file.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
                 final JFileChooser fc = new JFileChooser();
@@ -57,7 +58,7 @@ public class Chat_Messenger {
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File file = fc.getSelectedFile();
                     System.out.println("Selected file: " + file.getAbsolutePath());
-                    
+                    attachFile(file);
                 }
                 
             }
