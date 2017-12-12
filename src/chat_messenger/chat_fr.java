@@ -202,6 +202,7 @@ public class chat_fr extends javax.swing.JFrame {
     private void btn_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_connectActionPerformed
         Server server = new Server(Integer.parseInt(my_port.getText()), this);
         server.start();
+        btn_connect.setEnabled(false);
     }//GEN-LAST:event_btn_connectActionPerformed
 
     private void btn_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendActionPerformed
