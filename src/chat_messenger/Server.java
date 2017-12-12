@@ -7,6 +7,7 @@ package chat_messenger;
 
 import static chat_messenger.chat_fr.btn_receive_file;
 import static chat_messenger.chat_fr.file_transfer;
+import static chat_messenger.chat_fr.set_theme_client;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -46,17 +47,26 @@ public class Server extends Thread{
         try {    
             while((ss=s1.accept())!=null){
                 Scanner sc = new Scanner(ss.getInputStream());
+                
                 if(sc.hasNextBoolean()){
                     ft = sc.nextBoolean();
                     file_transfer = ft;
-                    frame.text_area.append("You received a file");
+                    frame.text_area.append("You received a file\n");
                     btn_receive_file.setEnabled(true);
-                }else if(sc.hasNextLine()){
+                }
+                else if(sc.hasNextInt()){
+                    int color = sc.nextInt();
+                    set_theme_client(color);
+                    frame.text_area.append("Your peer has changed the theme\n");
+                }
+                else if(sc.hasNextLine()){
                     msg = sc.nextLine();
+                    System.out.println(msg.getClass().getTypeName());
                     if(msg!=null){
                     frame.text_area.append("Client: " +msg+"\n");
                     }
                 }
+                
                 
             }
         } catch (IOException ex) {

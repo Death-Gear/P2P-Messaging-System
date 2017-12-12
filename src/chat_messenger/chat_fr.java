@@ -5,6 +5,7 @@
  */
 package chat_messenger;
 
+import java.awt.Color;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,6 +28,9 @@ public class chat_fr extends javax.swing.JFrame {
      */
     public static boolean file_transfer = false;
     static File file;
+    public static String def_save_location = "D:";
+    public static String def_name = "copy.txt";
+    public static int def_color;
     public chat_fr() {
         initComponents();
     }
@@ -224,6 +228,23 @@ public class chat_fr extends javax.swing.JFrame {
         text_filePath.setText(file.getAbsolutePath());
     }
     
+    public static void set_default_save_location(String loc){
+        def_save_location = loc;
+    }
+    
+    public static void set_theme(int color){
+        def_color = color;
+        Color clr = new Color(def_color);
+        text_area.setBackground(clr);
+        //System.out.println(def_color);
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), def_color);
+        client.color_msg();
+    }
+    public static void set_theme_client(int color){
+        def_color = color;
+        Color clr = new Color(def_color);
+        text_area.setBackground(clr);
+    }
     
     
     public static void main(String args[]) {
@@ -264,13 +285,13 @@ public class chat_fr extends javax.swing.JFrame {
     public static javax.swing.JButton btn_receive_file;
     private javax.swing.JButton btn_send;
     public static javax.swing.JButton btn_send_file;
-    private javax.swing.JTextField dst_port;
-    private javax.swing.JTextField ip;
+    private static javax.swing.JTextField dst_port;
+    private static javax.swing.JTextField ip;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField my_port;
+    private static javax.swing.JTextField my_port;
     public static javax.swing.JTextArea text_area;
     private static javax.swing.JTextField text_filePath;
     private javax.swing.JTextField text_msg;
