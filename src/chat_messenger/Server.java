@@ -61,7 +61,6 @@ public class Server extends Thread{
                 }
                 else if(sc.hasNextLine()){
                     msg = sc.nextLine();
-                    System.out.println(msg.getClass().getTypeName());
                     if(msg!=null){
                     frame.text_area.append("Client: " +msg+"\n");
                     }
