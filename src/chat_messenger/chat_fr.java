@@ -184,7 +184,6 @@ public class chat_fr extends javax.swing.JFrame {
             //System.out.println("Receiving file");
             File_Receiver fr = new File_Receiver();
             fr.start();
-            System.out.println("Received file");
         }
     }//GEN-LAST:event_btn_receive_fileActionPerformed
 
