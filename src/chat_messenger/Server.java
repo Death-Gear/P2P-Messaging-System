@@ -8,6 +8,9 @@ package chat_messenger;
 import static chat_messenger.chat_fr.btn_receive_file;
 import static chat_messenger.chat_fr.file_transfer;
 import static chat_messenger.chat_fr.set_theme_client;
+import static chat_messenger.voice_call_fr.voice_calling;
+import static chat_messenger.chat_fr.start_call_client;
+import static chat_messenger.chat_fr.start_call_server;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -47,22 +50,39 @@ public class Server extends Thread{
         try {    
             while((ss=s1.accept())!=null){
                 Scanner sc = new Scanner(ss.getInputStream());
-                
-                if(sc.hasNextBoolean()){
-                    ft = sc.nextBoolean();
-                    file_transfer = ft;
-                    frame.text_area.append("You received a file\r\n");
-                    btn_receive_file.setEnabled(true);
-                }
-                else if(sc.hasNextInt()){
-                    int color = sc.nextInt();
-                    set_theme_client(color);
-                    frame.text_area.append("Your peer has changed the theme\r\n");
-                }
-                else if(sc.hasNextLine()){
+                                
+//                if(sc.hasNextInt()){
+//                    int color = sc.nextInt();
+//                    set_theme_client(color);
+//                    frame.text_area.append("Your peer has changed the theme\r\n");
+//                }
+                if(sc.hasNextLine()){
                     msg = sc.nextLine();
                     if(msg!=null){
-                    frame.text_area.append("Client: " +msg+"\r\n");
+                        if("--uoyevoli--".equals(msg)){
+                            file_transfer = true;
+                            frame.text_area.append("You received a file\r\n");
+                            btn_receive_file.setEnabled(true);
+                        }
+                        else if("@roloc@".equals(msg)){
+                            int color = sc.nextInt();
+                            set_theme_client(color);
+                            frame.text_area.append("Your peer has changed the theme\r\n");
+                        }
+                        else if("--uoyeciovi--".equals(msg)){
+                            voice_call_fr fr = new voice_call_fr();
+                            fr.setVisible(true);
+                        }else if("--ieciovuoy--".equals(msg)){
+                            voice_calling = true;
+                            System.out.println("Received");
+                            voice_chat_fr fr = new voice_chat_fr();
+                            fr.setVisible(true);
+                            start_call_server();
+                            start_call_client();
+                        }
+                        else{
+                            frame.text_area.append("Client: " +msg+"\r\n");
+                        }        
                     }
                 }
                 

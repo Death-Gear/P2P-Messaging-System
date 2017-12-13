@@ -213,6 +213,22 @@ public class chat_fr extends javax.swing.JFrame {
         Color clr = new Color(def_color);
         text_area.setBackground(clr);
     }
+    public static void call_voice_client(){
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), true);
+        client.voice_msg();
+    }
+    public static void call_voice_server(){
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), true);
+        client.voice_msg_s();
+    }
+    public static void start_call_client(){
+        Client_Voice cv = new Client_Voice(ip.getText(), Integer.parseInt(dst_port.getText())-5);
+        cv.start();
+    }
+    public static void start_call_server(){
+        Server_Voice sv = new Server_Voice(Integer.parseInt(my_port.getText())-5);
+        sv.start();
+    }
     public static void save_message(){
         String content = text_area.getText();
         String name = "history.txt";

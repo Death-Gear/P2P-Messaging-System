@@ -12,6 +12,7 @@ import static chat_messenger.chat_fr.btn_send_file;
 import static chat_messenger.chat_fr.set_default_save_location;
 import static chat_messenger.chat_fr.set_theme;
 import static chat_messenger.chat_fr.save_message;
+import static chat_messenger.chat_fr.call_voice_client;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -61,6 +62,8 @@ public class Chat_Messenger {
         mb.add(file);
         JMenu edit = new JMenu("Edit");
         mb.add(edit);
+        JMenu call = new JMenu("Call");
+        mb.add(call);
         JMenuItem attach_file = new JMenuItem("Attach File");
         file.add(attach_file);
         JMenuItem set_default = new JMenuItem("Set Default Save Location");
@@ -71,6 +74,8 @@ public class Chat_Messenger {
         file.add(exit);
         JMenuItem set_theme = new JMenuItem("Set Theme");
         edit.add(set_theme);
+        JMenuItem voice_call = new JMenuItem("Start Voice Call");
+        call.add(voice_call);
         exit.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -124,6 +129,12 @@ public class Chat_Messenger {
                  set_theme(color_int);
             }
             
+        });
+        voice_call.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                call_voice_client();
+            }
         });
         
         frame.setJMenuBar(mb);
