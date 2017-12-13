@@ -51,18 +51,18 @@ public class Server extends Thread{
                 if(sc.hasNextBoolean()){
                     ft = sc.nextBoolean();
                     file_transfer = ft;
-                    frame.text_area.append("You received a file\n");
+                    frame.text_area.append("You received a file\r\n");
                     btn_receive_file.setEnabled(true);
                 }
                 else if(sc.hasNextInt()){
                     int color = sc.nextInt();
                     set_theme_client(color);
-                    frame.text_area.append("Your peer has changed the theme\n");
+                    frame.text_area.append("Your peer has changed the theme\r\n");
                 }
                 else if(sc.hasNextLine()){
                     msg = sc.nextLine();
                     if(msg!=null){
-                    frame.text_area.append("Client: " +msg+"\n");
+                    frame.text_area.append("Client: " +msg+"\r\n");
                     }
                 }
                 

@@ -11,15 +11,20 @@ import static chat_messenger.chat_fr.btn_receive_file;
 import static chat_messenger.chat_fr.btn_send_file;
 import static chat_messenger.chat_fr.set_default_save_location;
 import static chat_messenger.chat_fr.set_theme;
+import static chat_messenger.chat_fr.save_message;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -31,8 +36,21 @@ public class Chat_Messenger {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Chat_Messenger.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Chat_Messenger.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Chat_Messenger.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Chat_Messenger.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         chat_fr frame = new chat_fr();
         frame.setTitle("P2P Chat Messenger");
+        frame.setDefaultLookAndFeelDecorated(true);
         
         text_area.setEditable(false);
         
@@ -47,6 +65,8 @@ public class Chat_Messenger {
         file.add(attach_file);
         JMenuItem set_default = new JMenuItem("Set Default Save Location");
         file.add(set_default);
+        JMenuItem save_msg = new JMenuItem("Save Message History");
+        file.add(save_msg);
         JMenuItem exit = new JMenuItem("Exit");
         file.add(exit);
         JMenuItem set_theme = new JMenuItem("Set Theme");
@@ -89,6 +109,12 @@ public class Chat_Messenger {
                 }
             }
             
+        });
+        save_msg.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                save_message();
+            }
         });
         set_theme.addActionListener(new ActionListener(){
             @Override

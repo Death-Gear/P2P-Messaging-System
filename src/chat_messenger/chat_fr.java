@@ -6,15 +6,11 @@
 package chat_messenger;
 
 import java.awt.Color;
-import java.io.BufferedInputStream;
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
@@ -58,17 +54,25 @@ public class chat_fr extends javax.swing.JFrame {
         text_filePath = new javax.swing.JTextField();
         btn_send_file = new javax.swing.JButton();
         btn_receive_file = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         setSize(new java.awt.Dimension(0, 0));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        text_area.setEditable(false);
+        text_area.setBackground(new java.awt.Color(255, 255, 102));
         text_area.setColumns(20);
         text_area.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
         text_area.setRows(5);
         jScrollPane1.setViewportView(text_area);
 
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 75, 529, 160));
+
+        text_msg.setBackground(new java.awt.Color(255, 255, 153));
         text_msg.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(text_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 253, 529, 34));
 
         btn_send.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_send.setText("Send");
@@ -77,29 +81,42 @@ public class chat_fr extends javax.swing.JFrame {
                 btn_sendActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_send, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 253, 109, 34));
 
+        my_port.setBackground(new java.awt.Color(102, 255, 255));
         my_port.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         my_port.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         my_port.setText("8877");
+        getContentPane().add(my_port, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 109, 40));
 
+        dst_port.setBackground(new java.awt.Color(102, 255, 255));
         dst_port.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         dst_port.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         dst_port.setText("8878");
+        getContentPane().add(dst_port, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 195, 109, 40));
 
+        ip.setBackground(new java.awt.Color(102, 255, 255));
         ip.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ip.setText("127.0.0.1");
+        getContentPane().add(ip, new org.netbeans.lib.awtextra.AbsoluteConstraints(123, 21, 431, 43));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("My Port");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 75, 109, 30));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Dst. Port");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 159, 109, 24));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("IP Address");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 21, 85, 43));
 
         btn_connect.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_connect.setText("Connect");
@@ -108,9 +125,13 @@ public class chat_fr extends javax.swing.JFrame {
                 btn_connectActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 21, 109, 43));
 
+        text_filePath.setBackground(new java.awt.Color(153, 255, 153));
         text_filePath.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        text_filePath.setForeground(new java.awt.Color(102, 102, 102));
         text_filePath.setText("File Path");
+        getContentPane().add(text_filePath, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 305, 412, 37));
 
         btn_send_file.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_send_file.setText("Send File");
@@ -119,6 +140,7 @@ public class chat_fr extends javax.swing.JFrame {
                 btn_send_fileActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_send_file, new org.netbeans.lib.awtextra.AbsoluteConstraints(443, 305, 109, 37));
 
         btn_receive_file.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btn_receive_file.setText("Receive File");
@@ -127,73 +149,10 @@ public class chat_fr extends javax.swing.JFrame {
                 btn_receive_fileActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_receive_file, new org.netbeans.lib.awtextra.AbsoluteConstraints(578, 305, 109, 37));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(text_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 529, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(text_filePath, javax.swing.GroupLayout.PREFERRED_SIZE, 412, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btn_send_file, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(btn_receive_file, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(553, 553, 553)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dst_port, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_connect, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_send, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(my_port, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(11, 11, 11)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(96, 96, 96)
-                        .addComponent(dst_port, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(text_msg, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(text_filePath, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(btn_send_file, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(btn_receive_file, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(54, 54, 54)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btn_connect, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(232, 232, 232)
-                        .addComponent(btn_send, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(my_port, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/bg_img.png"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -208,7 +167,7 @@ public class chat_fr extends javax.swing.JFrame {
     private void btn_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendActionPerformed
         Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), text_msg.getText());
         client.start();
-        text_area.append("Me: "+text_msg.getText()+ "\n");
+        text_area.append("Me: "+text_msg.getText()+ "\r\n");
     }//GEN-LAST:event_btn_sendActionPerformed
 
     private void btn_send_fileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_send_fileActionPerformed
@@ -255,6 +214,23 @@ public class chat_fr extends javax.swing.JFrame {
         Color clr = new Color(def_color);
         text_area.setBackground(clr);
     }
+    public static void save_message(){
+        String content = text_area.getText();
+        String name = "history.txt";
+        String path = def_save_location + "\\" + name;
+        System.out.println(content);
+          
+        try {
+		File file = new File(path);
+		FileWriter fileWriter = new FileWriter(file);
+		fileWriter.write(content);
+		fileWriter.flush();
+		fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        
+    }
     
     
     public static void main(String args[]) {
@@ -300,6 +276,7 @@ public class chat_fr extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private static javax.swing.JTextField my_port;
     public static javax.swing.JTextArea text_area;
