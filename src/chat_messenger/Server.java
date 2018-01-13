@@ -8,7 +8,7 @@ package chat_messenger;
 import static chat_messenger.chat_fr.btn_receive_file;
 import static chat_messenger.chat_fr.file_transfer;
 import static chat_messenger.chat_fr.set_theme_client;
-import static chat_messenger.voice_call_fr.voice_calling;
+import static chat_messenger.voice_call_hc.voice_calling;
 import static chat_messenger.chat_fr.start_call_client;
 import static chat_messenger.chat_fr.start_call_server;
 import java.io.BufferedInputStream;
@@ -70,13 +70,17 @@ public class Server extends Thread{
                             frame.text_area.append("Your peer has changed the theme\r\n");
                         }
                         else if("--uoyeciovi--".equals(msg)){
-                            voice_call_fr fr = new voice_call_fr();
-                            fr.setVisible(true);
+//                            voice_call_fr fr = new voice_call_fr();
+//                            fr.setVisible(true);
+                            voice_call_hc hc = new voice_call_hc();
+                            hc.setVisible(true);
                         }else if("--ieciovuoy--".equals(msg)){
                             voice_calling = true;
                             System.out.println("Received");
-                            voice_chat_fr fr = new voice_chat_fr();
-                            fr.setVisible(true);
+//                            voice_chat_fr fr = new voice_chat_fr();
+//                            fr.setVisible(true);
+                            voice_chat_hc hc = new voice_chat_hc();
+                            hc.setVisible(true);
                             start_call_server();
                             start_call_client();
                         }
