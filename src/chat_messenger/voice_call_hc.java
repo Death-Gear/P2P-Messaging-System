@@ -5,11 +5,11 @@
  */
 package chat_messenger;
 
-import static chat_messenger.chat_fr.call_voice_server;
-import static chat_messenger.chat_fr.start_call_client;
+import static chat_messenger.chat_hc.call_voice_server;
+import static chat_messenger.chat_hc.start_call_client;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import static chat_messenger.chat_fr.start_call_server;
+import static chat_messenger.chat_hc.start_call_server;
 import javax.swing.JFrame;
 
 /**
@@ -44,7 +44,7 @@ public class voice_call_hc extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(36, 47, 65));
-        setPreferredSize(new java.awt.Dimension(465, 432));
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(36, 47, 65));
@@ -57,7 +57,6 @@ public class voice_call_hc extends javax.swing.JFrame {
         decline.setText("Decline");
         decline.setBorderPainted(false);
         decline.setContentAreaFilled(false);
-        decline.setOpaque(false);
         decline.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 declineActionPerformed(evt);

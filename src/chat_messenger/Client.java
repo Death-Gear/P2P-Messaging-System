@@ -5,8 +5,8 @@
  */
 package chat_messenger;
 
-import static chat_messenger.chat_fr.def_name;
-import static chat_messenger.chat_fr.def_save_location;
+import static chat_messenger.chat_hc.def_name;
+import static chat_messenger.chat_hc.def_save_location;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

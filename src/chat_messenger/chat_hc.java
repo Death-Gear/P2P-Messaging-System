@@ -5,6 +5,12 @@
  */
 package chat_messenger;
 
+import java.awt.Color;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  *
  * @author Risad
@@ -14,6 +20,11 @@ public class chat_hc extends javax.swing.JFrame {
     /**
      * Creates new form chat_hc
      */
+    public static boolean file_transfer = false;
+    static File file;
+    public static String def_save_location = "D:";
+    public static String def_name = "copy.txt";
+    public static int def_color;
     public chat_hc() {
         initComponents();
     }
@@ -29,206 +40,257 @@ public class chat_hc extends javax.swing.JFrame {
 
         jScrollPane2 = new javax.swing.JScrollPane();
         jEditorPane1 = new javax.swing.JEditorPane();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        ip = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        dst_port = new javax.swing.JTextField();
+        text_filePath = new javax.swing.JTextField();
+        btn_connect = new javax.swing.JButton();
+        btn_receive_file = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
+        my_port = new javax.swing.JTextField();
+        btn_send_file = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        text_area = new javax.swing.JTextArea();
+        text_msg = new javax.swing.JTextField();
+        btn_send = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator3 = new javax.swing.JSeparator();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jScrollPane2.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel2.setBackground(new java.awt.Color(36, 47, 95));
-
-        jScrollPane1.setBackground(new java.awt.Color(36, 47, 95));
-        jScrollPane1.setOpaque(false);
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setBackground(new java.awt.Color(36, 47, 95));
-        jTextArea1.setColumns(20);
-        jTextArea1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jTextField1.setOpaque(false);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (5).png")); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\picturetopeople.org-c148957c1d684a43bbcb0991c103d974b8602f542364454219 (1).png")); // NOI18N
-        jLabel4.setText(" ");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jTextField1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton1)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(77, 77, 77))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
-                .addContainerGap(33, Short.MAX_VALUE))
-        );
-
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 420, 500));
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("IP Address");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, -1));
 
-        jTextField2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField2.setText("127.0.0.1");
-        jTextField2.setOpaque(false);
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        ip.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        ip.setForeground(new java.awt.Color(255, 255, 255));
+        ip.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        ip.setText("127.0.0.1");
+        ip.setOpaque(false);
+        ip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                ipActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 140, 30));
+        getContentPane().add(ip, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 140, 30));
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Destination Port");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
 
-        jTextField3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField3.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField3.setText("8878");
-        jTextField3.setOpaque(false);
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 70, 30));
+        dst_port.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        dst_port.setForeground(new java.awt.Color(255, 255, 255));
+        dst_port.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        dst_port.setText("8878");
+        dst_port.setOpaque(false);
+        getContentPane().add(dst_port, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 70, 30));
 
-        jTextField4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField4.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField4.setText("File Path");
-        jTextField4.setOpaque(false);
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 140, -1));
+        text_filePath.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        text_filePath.setForeground(new java.awt.Color(255, 255, 255));
+        text_filePath.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        text_filePath.setText("File Path");
+        text_filePath.setOpaque(false);
+        getContentPane().add(text_filePath, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 140, -1));
 
-        jButton2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (6).png")); // NOI18N
-        jButton2.setText("CONNECT");
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_connect.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btn_connect.setForeground(new java.awt.Color(255, 255, 255));
+        btn_connect.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (6).png")); // NOI18N
+        btn_connect.setText("CONNECT ");
+        btn_connect.setBorderPainted(false);
+        btn_connect.setContentAreaFilled(false);
+        btn_connect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_connectActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        getContentPane().add(btn_connect, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 150, -1));
 
-        jButton3.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (4).png")); // NOI18N
-        jButton3.setText("Receive File");
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
+        btn_receive_file.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btn_receive_file.setForeground(new java.awt.Color(255, 255, 255));
+        btn_receive_file.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (4).png")); // NOI18N
+        btn_receive_file.setText("Receive File");
+        btn_receive_file.setBorderPainted(false);
+        btn_receive_file.setContentAreaFilled(false);
+        btn_receive_file.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_receive_fileActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_receive_file, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("My Port");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, -1));
 
-        jTextField5.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField5.setText("8877");
-        jTextField5.setOpaque(false);
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 70, 30));
+        my_port.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        my_port.setForeground(new java.awt.Color(255, 255, 255));
+        my_port.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        my_port.setText("8877");
+        my_port.setOpaque(false);
+        getContentPane().add(my_port, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 70, 30));
 
-        jButton4.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (3).png")); // NOI18N
-        jButton4.setText("Send File");
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btn_send_file.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        btn_send_file.setForeground(new java.awt.Color(255, 255, 255));
+        btn_send_file.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (3).png")); // NOI18N
+        btn_send_file.setText("Send File");
+        btn_send_file.setBorderPainted(false);
+        btn_send_file.setContentAreaFilled(false);
+        btn_send_file.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btn_send_fileActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
-        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, 130, 10));
+        getContentPane().add(btn_send_file, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, 110, 10));
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\background.png")); // NOI18N
         jLabel1.setText(" ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 500));
 
+        jScrollPane1.setOpaque(false);
+
+        text_area.setColumns(20);
+        text_area.setFont(new java.awt.Font("Century Schoolbook", 0, 14)); // NOI18N
+        text_area.setRows(5);
+        jScrollPane1.setViewportView(text_area);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 90, 400, 310));
+
+        text_msg.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        text_msg.setForeground(new java.awt.Color(255, 255, 255));
+        text_msg.setText(" ");
+        text_msg.setToolTipText("");
+        text_msg.setOpaque(false);
+        getContentPane().add(text_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 320, 40));
+
+        btn_send.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (5).png")); // NOI18N
+        btn_send.setBorderPainted(false);
+        btn_send.setContentAreaFilled(false);
+        btn_send.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_sendActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btn_send, new org.netbeans.lib.awtextra.AbsoluteConstraints(545, 410, 60, -1));
+
+        jSeparator2.setForeground(new java.awt.Color(255, 255, 255));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 452, 320, 10));
+        getContentPane().add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 70, 190, -1));
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (7).png")); // NOI18N
+        jLabel4.setText("P2P MESSENGER");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 190, -1));
+
+        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\bgta.png")); // NOI18N
+        jLabel6.setText(" ");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 420, 500));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_connectActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_connectActionPerformed
+        Server server = new Server(Integer.parseInt(my_port.getText()), this);
+        server.start();
+        btn_connect.setEnabled(false);
+    }//GEN-LAST:event_btn_connectActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void ipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ipActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_ipActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void btn_send_fileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_send_fileActionPerformed
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), true);
+        client.file_msg();
+        File_Sender fs = new File_Sender(file);
+        fs.start();
+    }//GEN-LAST:event_btn_send_fileActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    private void btn_sendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sendActionPerformed
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), text_msg.getText());
+        client.start();
+        text_area.append("Me: "+text_msg.getText()+ "\r\n");
+    }//GEN-LAST:event_btn_sendActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton4ActionPerformed
+    private void btn_receive_fileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_receive_fileActionPerformed
+        if(file_transfer){
+            //System.out.println("Receiving file");
+            File_Receiver fr = new File_Receiver();
+            fr.start();
+        }
+    }//GEN-LAST:event_btn_receive_fileActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    
+    public static void attachFile(File file){
+        chat_hc.file = file;
+        text_filePath.setText(file.getAbsolutePath());
+    }
+    public static void set_default_save_location(String loc){
+        def_save_location = loc;
+    }
+    public static void set_theme(int color){
+        def_color = color;
+        Color clr = new Color(def_color);
+        text_area.setBackground(clr);
+        //System.out.println(def_color);
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), def_color);
+        client.color_msg();
+    }
+    public static void set_theme_client(int color){
+        def_color = color;
+        Color clr = new Color(def_color);
+        text_area.setBackground(clr);
+    }
+    public static void call_voice_client(){
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), true);
+        client.voice_msg();
+    }
+    public static void call_voice_server(){
+        Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), true);
+        client.voice_msg_s();
+    }
+    public static void start_call_client(){
+        Client_Voice cv = new Client_Voice(ip.getText(), Integer.parseInt(dst_port.getText())-5);
+        cv.start();
+    }
+    public static void start_call_server(){
+        Server_Voice sv = new Server_Voice(Integer.parseInt(my_port.getText())-5);
+        sv.start();
+    }
+    
+    public static void save_message(){
+        String content = text_area.getText();
+        String name = "history.txt";
+        String path = def_save_location + "\\" + name;
+        System.out.println(content);
+          
+        try {
+		File file = new File(path);
+		FileWriter fileWriter = new FileWriter(file);
+		fileWriter.write(content);
+		fileWriter.flush();
+		fileWriter.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        
+    }
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -262,25 +324,27 @@ public class chat_hc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btn_connect;
+    public static javax.swing.JButton btn_receive_file;
+    private javax.swing.JButton btn_send;
+    public static javax.swing.JButton btn_send_file;
+    private static javax.swing.JTextField dst_port;
+    private static javax.swing.JTextField ip;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private static javax.swing.JTextField my_port;
+    public static javax.swing.JTextArea text_area;
+    private static javax.swing.JTextField text_filePath;
+    private javax.swing.JTextField text_msg;
     // End of variables declaration//GEN-END:variables
 }

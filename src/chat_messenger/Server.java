@@ -5,12 +5,12 @@
  */
 package chat_messenger;
 
-import static chat_messenger.chat_fr.btn_receive_file;
-import static chat_messenger.chat_fr.file_transfer;
-import static chat_messenger.chat_fr.set_theme_client;
+import static chat_messenger.chat_hc.btn_receive_file;
+import static chat_messenger.chat_hc.file_transfer;
+import static chat_messenger.chat_hc.set_theme_client;
 import static chat_messenger.voice_call_hc.voice_calling;
-import static chat_messenger.chat_fr.start_call_client;
-import static chat_messenger.chat_fr.start_call_server;
+import static chat_messenger.chat_hc.start_call_client;
+import static chat_messenger.chat_hc.start_call_server;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,13 +28,13 @@ import java.util.logging.Logger;
  */
 public class Server extends Thread{
     private static int port;
-    chat_fr frame;
+    chat_hc frame;
     private static String msg;
     private static boolean ft = false;
     private static ServerSocket s1;
     private static ServerSocket s2;
     Socket ss;
-    Server(int port, chat_fr frame){
+    Server(int port, chat_hc frame){
         Server.port = port;
         this.frame = frame;
         try {

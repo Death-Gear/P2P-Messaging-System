@@ -5,14 +5,14 @@
  */
 package chat_messenger;
 
-import static chat_messenger.chat_fr.text_area;
-import static chat_messenger.chat_fr.attachFile;
-import static chat_messenger.chat_fr.btn_receive_file;
-import static chat_messenger.chat_fr.btn_send_file;
-import static chat_messenger.chat_fr.set_default_save_location;
-import static chat_messenger.chat_fr.set_theme;
-import static chat_messenger.chat_fr.save_message;
-import static chat_messenger.chat_fr.call_voice_client;
+import static chat_messenger.chat_hc.text_area;
+import static chat_messenger.chat_hc.attachFile;
+import static chat_messenger.chat_hc.btn_receive_file;
+import static chat_messenger.chat_hc.btn_send_file;
+import static chat_messenger.chat_hc.set_default_save_location;
+import static chat_messenger.chat_hc.set_theme;
+import static chat_messenger.chat_hc.save_message;
+import static chat_messenger.chat_hc.call_voice_client;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -37,7 +37,7 @@ public class Chat_Messenger {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        try {
+        /*try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Chat_Messenger.class.getName()).log(Level.SEVERE, null, ex);
@@ -47,11 +47,11 @@ public class Chat_Messenger {
             Logger.getLogger(Chat_Messenger.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
             Logger.getLogger(Chat_Messenger.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
         
-        chat_fr frame = new chat_fr();
+        chat_hc frame = new chat_hc();
         frame.setTitle("P2P Chat Messenger");
-        frame.setDefaultLookAndFeelDecorated(true);
+        //frame.setDefaultLookAndFeelDecorated(true);
         
         text_area.setEditable(false);
         
