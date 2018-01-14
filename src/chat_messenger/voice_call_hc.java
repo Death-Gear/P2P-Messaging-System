@@ -53,7 +53,7 @@ public class voice_call_hc extends javax.swing.JFrame {
 
         decline.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         decline.setForeground(new java.awt.Color(255, 255, 255));
-        decline.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (2).png")); // NOI18N
+        decline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (2).png"))); // NOI18N
         decline.setText("Decline");
         decline.setBorderPainted(false);
         decline.setContentAreaFilled(false);
@@ -65,7 +65,7 @@ public class voice_call_hc extends javax.swing.JFrame {
 
         answer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         answer.setForeground(new java.awt.Color(255, 255, 255));
-        answer.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage.png")); // NOI18N
+        answer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage.png"))); // NOI18N
         answer.setText("Answer");
         answer.setBorderPainted(false);
         answer.setContentAreaFilled(false);
@@ -96,7 +96,7 @@ public class voice_call_hc extends javax.swing.JFrame {
                 .addGap(169, 169, 169))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Risad\\Desktop\\zzzzzzstream\\Webp.net-resizeimage (1).png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (1).png"))); // NOI18N
         jLabel1.setText(" ");
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N

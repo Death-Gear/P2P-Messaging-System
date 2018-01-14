@@ -146,7 +146,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Risad\Desktop\zzzzzzstream\Webp.net-resizeimage (6).png"/>
+          <Image iconType="3" name="/chat_messenger/Webp.net-resizeimage (6).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="CONNECT "/>
         <Property name="borderPainted" type="boolean" value="false"/>
@@ -170,7 +170,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Risad\Desktop\zzzzzzstream\Webp.net-resizeimage (4).png"/>
+          <Image iconType="3" name="/chat_messenger/Webp.net-resizeimage (4).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Receive File"/>
         <Property name="borderPainted" type="boolean" value="false"/>
@@ -234,7 +234,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Risad\Desktop\zzzzzzstream\Webp.net-resizeimage (3).png"/>
+          <Image iconType="3" name="/chat_messenger/Webp.net-resizeimage (3).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Send File"/>
         <Property name="borderPainted" type="boolean" value="false"/>
@@ -262,7 +262,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Risad\Desktop\zzzzzzstream\background.png"/>
+          <Image iconType="3" name="/chat_messenger/background.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
@@ -322,7 +322,7 @@
     <Component class="javax.swing.JButton" name="btn_send">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Risad\Desktop\zzzzzzstream\Webp.net-resizeimage (5).png"/>
+          <Image iconType="3" name="/chat_messenger/Webp.net-resizeimage (5).png"/>
         </Property>
         <Property name="borderPainted" type="boolean" value="false"/>
         <Property name="contentAreaFilled" type="boolean" value="false"/>
@@ -364,7 +364,7 @@
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Risad\Desktop\zzzzzzstream\Webp.net-resizeimage (7).png"/>
+          <Image iconType="3" name="/chat_messenger/Webp.net-resizeimage (7).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="P2P MESSENGER"/>
       </Properties>
@@ -377,7 +377,7 @@
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Risad\Desktop\zzzzzzstream\bgta.png"/>
+          <Image iconType="3" name="/chat_messenger/bgta.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value=" "/>
       </Properties>
