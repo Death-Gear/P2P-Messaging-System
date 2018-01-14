@@ -223,6 +223,7 @@ public class chat_hc extends javax.swing.JFrame {
         Client client = new Client(ip.getText(), Integer.parseInt(dst_port.getText()), text_msg.getText());
         client.start();
         text_area.append("Me: "+text_msg.getText()+ "\r\n");
+        text_msg.setText("");
     }//GEN-LAST:event_btn_sendActionPerformed
 
     private void btn_receive_fileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_receive_fileActionPerformed
