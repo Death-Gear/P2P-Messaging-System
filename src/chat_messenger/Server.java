@@ -5,9 +5,12 @@
  */
 package chat_messenger;
 
-import static chat_messenger.chat_fr.btn_receive_file;
-import static chat_messenger.chat_fr.file_transfer;
-import static chat_messenger.chat_fr.set_theme_client;
+import static chat_messenger.chat_hc.btn_receive_file;
+import static chat_messenger.chat_hc.file_transfer;
+import static chat_messenger.chat_hc.set_theme_client;
+import static chat_messenger.voice_call_hc.voice_calling;
+import static chat_messenger.chat_hc.start_call_client;
+import static chat_messenger.chat_hc.start_call_server;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,13 +28,13 @@ import java.util.logging.Logger;
  */
 public class Server extends Thread{
     private static int port;
-    chat_fr frame;
+    chat_hc frame;
     private static String msg;
     private static boolean ft = false;
     private static ServerSocket s1;
     private static ServerSocket s2;
     Socket ss;
-    Server(int port, chat_fr frame){
+    Server(int port, chat_hc frame){
         Server.port = port;
         this.frame = frame;
         try {
@@ -47,22 +50,43 @@ public class Server extends Thread{
         try {    
             while((ss=s1.accept())!=null){
                 Scanner sc = new Scanner(ss.getInputStream());
-                
-                if(sc.hasNextBoolean()){
-                    ft = sc.nextBoolean();
-                    file_transfer = ft;
-                    frame.text_area.append("You received a file\r\n");
-                    btn_receive_file.setEnabled(true);
-                }
-                else if(sc.hasNextInt()){
-                    int color = sc.nextInt();
-                    set_theme_client(color);
-                    frame.text_area.append("Your peer has changed the theme\r\n");
-                }
-                else if(sc.hasNextLine()){
+                                
+//                if(sc.hasNextInt()){
+//                    int color = sc.nextInt();
+//                    set_theme_client(color);
+//                    frame.text_area.append("Your peer has changed the theme\r\n");
+//                }
+                if(sc.hasNextLine()){
                     msg = sc.nextLine();
                     if(msg!=null){
-                    frame.text_area.append("Client: " +msg+"\r\n");
+                        if("--uoyevoli--".equals(msg)){
+                            file_transfer = true;
+                            frame.text_area.append("You received a file\r\n");
+                            btn_receive_file.setEnabled(true);
+                        }
+                        else if("@roloc@".equals(msg)){
+                            int color = sc.nextInt();
+                            set_theme_client(color);
+                            frame.text_area.append("Your peer has changed the theme\r\n");
+                        }
+                        else if("--uoyeciovi--".equals(msg)){
+//                            voice_call_fr fr = new voice_call_fr();
+//                            fr.setVisible(true);
+                            voice_call_hc hc = new voice_call_hc();
+                            hc.setVisible(true);
+                        }else if("--ieciovuoy--".equals(msg)){
+                            voice_calling = true;
+                            System.out.println("Received");
+//                            voice_chat_fr fr = new voice_chat_fr();
+//                            fr.setVisible(true);
+                            voice_chat_hc hc = new voice_chat_hc();
+                            hc.setVisible(true);
+                            start_call_server();
+                            start_call_client();
+                        }
+                        else{
+                            frame.text_area.append("Client: " +msg+"\r\n");
+                        }        
                     }
                 }
                 

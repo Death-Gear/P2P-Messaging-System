@@ -5,8 +5,8 @@
  */
 package chat_messenger;
 
-import static chat_messenger.chat_fr.def_name;
-import static chat_messenger.chat_fr.def_save_location;
+import static chat_messenger.chat_hc.def_name;
+import static chat_messenger.chat_hc.def_save_location;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -70,7 +70,9 @@ public class Client extends Thread{
     public void file_msg(){
         try {       
             PrintStream p = new PrintStream(s.getOutputStream());
-            p.println(ft);
+            if(ft){
+                p.println("--uoyevoli--");
+            }   
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -78,7 +80,28 @@ public class Client extends Thread{
     public void color_msg(){
         try {       
             PrintStream p = new PrintStream(s.getOutputStream());
+            p.println("@roloc@");
             p.println(color);
+        } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void voice_msg(){
+        try {       
+            PrintStream p = new PrintStream(s.getOutputStream());
+            if(ft){
+                p.println("--uoyeciovi--");
+            }   
+        } catch (IOException ex) {
+            Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    public void voice_msg_s(){
+        try {       
+            PrintStream p = new PrintStream(s.getOutputStream());
+            if(ft){
+                p.println("--ieciovuoy--");
+            }   
         } catch (IOException ex) {
             Logger.getLogger(Client.class.getName()).log(Level.SEVERE, null, ex);
         }
