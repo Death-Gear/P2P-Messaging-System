@@ -235,7 +235,7 @@ public class chat_hc extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_receive_fileActionPerformed
 
     /**
-     * @param args the command line arguments
+     * @param file the command line arguments
      */
     
     public static void attachFile(File file){
