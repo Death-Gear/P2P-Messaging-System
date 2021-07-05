@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chat_messenger;
+package deathgear.chatmessenger;
 
-import static chat_messenger.chat_hc.def_name;
-import static chat_messenger.chat_hc.def_save_location;
+import static deathgear.chatmessenger.chat_hc.def_name;
+import static deathgear.chatmessenger.chat_hc.def_save_location;
 import java.io.BufferedOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;

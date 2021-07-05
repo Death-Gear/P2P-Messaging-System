@@ -3,14 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chat_messenger;
+package deathgear.chatmessenger;
 
-import static chat_messenger.chat_hc.call_voice_server;
-import static chat_messenger.chat_hc.start_call_client;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import static chat_messenger.chat_hc.start_call_server;
-import javax.swing.JFrame;
+import static deathgear.chatmessenger.chat_hc.call_voice_server;
+import static deathgear.chatmessenger.chat_hc.start_call_client;
+import static deathgear.chatmessenger.chat_hc.start_call_server;
 
 /**
  *
@@ -53,7 +50,7 @@ public class voice_call_hc extends javax.swing.JFrame {
 
         decline.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         decline.setForeground(new java.awt.Color(255, 255, 255));
-        decline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (2).png"))); // NOI18N
+        decline.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (2).png"))); // NOI18N
         decline.setText("Decline");
         decline.setBorderPainted(false);
         decline.setContentAreaFilled(false);
@@ -65,7 +62,7 @@ public class voice_call_hc extends javax.swing.JFrame {
 
         answer.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         answer.setForeground(new java.awt.Color(255, 255, 255));
-        answer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage.png"))); // NOI18N
+        answer.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage.png"))); // NOI18N
         answer.setText("Answer");
         answer.setBorderPainted(false);
         answer.setContentAreaFilled(false);
@@ -96,7 +93,7 @@ public class voice_call_hc extends javax.swing.JFrame {
                 .addGap(169, 169, 169))
         );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (1).png"))); // NOI18N
         jLabel1.setText(" ");
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N

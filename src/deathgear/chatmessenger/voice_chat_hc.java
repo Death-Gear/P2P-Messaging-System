@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chat_messenger;
-
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+package deathgear.chatmessenger;
 
 /**
  *
@@ -43,7 +40,7 @@ public class voice_chat_hc extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(97, 212, 195));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (1).png"))); // NOI18N
         jLabel1.setText(" ");
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -82,7 +79,7 @@ public class voice_chat_hc extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (2).png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (2).png"))); // NOI18N
         jButton1.setText("End Call");
         jButton1.setBorderPainted(false);
         jButton1.setContentAreaFilled(false);

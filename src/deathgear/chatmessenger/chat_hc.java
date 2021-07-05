@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chat_messenger;
+package deathgear.chatmessenger;
 
 import java.awt.Color;
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -105,7 +104,7 @@ public class chat_hc extends javax.swing.JFrame {
 
         btn_connect.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         btn_connect.setForeground(new java.awt.Color(255, 255, 255));
-        btn_connect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (6).png"))); // NOI18N
+        btn_connect.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (6).png"))); // NOI18N
         btn_connect.setText("CONNECT ");
         btn_connect.setBorderPainted(false);
         btn_connect.setContentAreaFilled(false);
@@ -118,7 +117,7 @@ public class chat_hc extends javax.swing.JFrame {
 
         btn_receive_file.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         btn_receive_file.setForeground(new java.awt.Color(255, 255, 255));
-        btn_receive_file.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (4).png"))); // NOI18N
+        btn_receive_file.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (4).png"))); // NOI18N
         btn_receive_file.setText("Receive File");
         btn_receive_file.setBorderPainted(false);
         btn_receive_file.setContentAreaFilled(false);
@@ -143,7 +142,7 @@ public class chat_hc extends javax.swing.JFrame {
 
         btn_send_file.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         btn_send_file.setForeground(new java.awt.Color(255, 255, 255));
-        btn_send_file.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (3).png"))); // NOI18N
+        btn_send_file.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (3).png"))); // NOI18N
         btn_send_file.setText("Send File");
         btn_send_file.setBorderPainted(false);
         btn_send_file.setContentAreaFilled(false);
@@ -155,7 +154,7 @@ public class chat_hc extends javax.swing.JFrame {
         getContentPane().add(btn_send_file, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 92, 110, 10));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/background.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/background.png"))); // NOI18N
         jLabel1.setText(" ");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 500));
 
@@ -175,7 +174,7 @@ public class chat_hc extends javax.swing.JFrame {
         text_msg.setOpaque(false);
         getContentPane().add(text_msg, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 410, 320, 40));
 
-        btn_send.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (5).png"))); // NOI18N
+        btn_send.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (5).png"))); // NOI18N
         btn_send.setBorderPainted(false);
         btn_send.setContentAreaFilled(false);
         btn_send.addActionListener(new java.awt.event.ActionListener() {
@@ -191,11 +190,11 @@ public class chat_hc extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/Webp.net-resizeimage (7).png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/Webp.net-resizeimage (7).png"))); // NOI18N
         jLabel4.setText("P2P MESSENGER");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 190, -1));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/chat_messenger/bgta.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/deathgear/chatmessenger/bgta.png"))); // NOI18N
         jLabel6.setText(" ");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 420, 500));
 

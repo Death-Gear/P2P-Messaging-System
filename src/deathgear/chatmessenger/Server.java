@@ -3,14 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chat_messenger;
+package deathgear.chatmessenger;
 
-import static chat_messenger.chat_hc.btn_receive_file;
-import static chat_messenger.chat_hc.file_transfer;
-import static chat_messenger.chat_hc.set_theme_client;
-import static chat_messenger.voice_call_hc.voice_calling;
-import static chat_messenger.chat_hc.start_call_client;
-import static chat_messenger.chat_hc.start_call_server;
+import static deathgear.chatmessenger.chat_hc.btn_receive_file;
+import static deathgear.chatmessenger.chat_hc.file_transfer;
+import static deathgear.chatmessenger.chat_hc.set_theme_client;
+import static deathgear.chatmessenger.chat_hc.start_call_client;
+import static deathgear.chatmessenger.chat_hc.start_call_server;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -75,7 +74,7 @@ public class Server extends Thread{
                             voice_call_hc hc = new voice_call_hc();
                             hc.setVisible(true);
                         }else if("--ieciovuoy--".equals(msg)){
-                            voice_calling = true;
+                            voice_call_hc.voice_calling = true;
                             System.out.println("Received");
 //                            voice_chat_fr fr = new voice_chat_fr();
 //                            fr.setVisible(true);

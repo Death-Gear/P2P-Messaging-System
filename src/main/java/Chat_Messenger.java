@@ -3,29 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package chat_messenger;
+package main.java;
 
-import static chat_messenger.chat_hc.text_area;
-import static chat_messenger.chat_hc.attachFile;
-import static chat_messenger.chat_hc.btn_receive_file;
-import static chat_messenger.chat_hc.btn_send_file;
-import static chat_messenger.chat_hc.set_default_save_location;
-import static chat_messenger.chat_hc.set_theme;
-import static chat_messenger.chat_hc.save_message;
-import static chat_messenger.chat_hc.call_voice_client;
+import deathgear.chatmessenger.chat_hc;
+
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -53,10 +43,10 @@ public class Chat_Messenger {
         frame.setTitle("P2P Chat Messenger");
         //frame.setDefaultLookAndFeelDecorated(true);
         
-        text_area.setEditable(false);
+        chat_hc.text_area.setEditable(false);
         
-        btn_receive_file.setEnabled(false);
-        btn_send_file.setEnabled(false);
+        chat_hc.btn_receive_file.setEnabled(false);
+        chat_hc.btn_send_file.setEnabled(false);
         JMenuBar mb = new JMenuBar();
         JMenu file = new JMenu("File");
         mb.add(file);
@@ -93,8 +83,8 @@ public class Chat_Messenger {
                 if (result == JFileChooser.APPROVE_OPTION) {
                     File file = fc.getSelectedFile();
                     System.out.println("Selected file: " + file.getAbsolutePath());
-                    attachFile(file);
-                    btn_send_file.setEnabled(true);
+                    chat_hc.attachFile(file);
+                    chat_hc.btn_send_file.setEnabled(true);
                 }
                 
             }
@@ -110,7 +100,7 @@ public class Chat_Messenger {
                     File folder = fc.getSelectedFile();
                     String s = folder.getAbsolutePath();
                     System.out.println("Selected file: " + s);
-                    set_default_save_location(s);
+                    chat_hc.set_default_save_location(s);
                 }
             }
             
@@ -118,7 +108,7 @@ public class Chat_Messenger {
         save_msg.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                save_message();
+                chat_hc.save_message();
             }
         });
         set_theme.addActionListener(new ActionListener(){
@@ -126,14 +116,14 @@ public class Chat_Messenger {
             public void actionPerformed(ActionEvent e) {
                  Color newColor = JColorChooser.showDialog(null, "Choose a color", Color.WHITE);
                  int color_int = newColor.getRGB();
-                 set_theme(color_int);
+                 chat_hc.set_theme(color_int);
             }
             
         });
         voice_call.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                call_voice_client();
+                chat_hc.call_voice_client();
             }
         });
         
